@@ -8,7 +8,7 @@
     <title>Lorum Ipsum</title>
     <link rel="icon" type="favicon" href="/images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <nav class="navbar">
                 <ul class="nav navbar-nav menu">
                     <li class="active nav-links menuItem">
-                        <a href="/bootstrapless.html">Homepage</a>
+                        <a href="/index.php">Homepage</a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Over ons</a>
@@ -64,16 +64,18 @@
         </div>
 
         <div class="logo-container">
-            <img class="logo" src="/images/lorem-logo.png" alt="Lorem Ipsum logo">
+            <img class="logo" src="images/lorem-logo.png"  alt="Lorem Ipsum logo">
         </div>
 
         <div class="img-gallery">
             <div class="grid-container">
                 <div class="img-grids">
-                    <img class="img-grid" src="/images/BlackPastel.jpeg" alt="Black Pastel Ball Python">
+                    <img class="img-grid" src="images/BlackPastel.jpeg" alt="Black Pastel Ball Python">
                     <div class="overlay">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Black Pastel<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Black Pastel<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -82,10 +84,12 @@
                     </div>
                 </div>
                 <div class="img-grids">
-                    <img class="img-grid" src="/images/BEL.jpeg" alt="Blue Eyed Leucistic Ball Python">
+                    <img class="img-grid" src="images/BEL.jpeg" alt="Blue Eyed Leucistic Ball Python">
                     <div class="overlay overlay-flex-second">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Blue Eyed Leucistic<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Blue Eyed Leucistic<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -94,10 +98,12 @@
                     </div>
                 </div>
                 <div class="img-grids">
-                    <img class="img-grid" src="/images/LightningPied.jpeg" alt="Lightning Pied Ball Python">
+                    <img class="img-grid" src="images/LightningPied.jpeg" alt="Lightning Pied Ball Python">
                     <div class="overlay overlay-middle overlay-flex-third">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Lightning Pied<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Lightning Pied<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -106,10 +112,12 @@
                     </div>
                 </div>
                 <div class="img-grids">
-                    <img class="img-grid img-banana" src="/images/PastelBanana.jpeg" alt="Pastel Banana Ball Python">
+                    <img class="img-grid img-banana" src="images/PastelBanana.jpeg" alt="Pastel Banana Ball Python">
                     <div class="overlay overlay-middle overlay-flex-fourth">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Pastel Banana<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Pastel Banana<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -118,10 +126,12 @@
                     </div>
                 </div>
                 <div class="img-grids">
-                    <img class="img-grid" src="/images/PastelVPIAxanthic.jpeg" alt="Pastel VPI Axanthic Ball Python">
+                    <img class="img-grid" src="images/PastelVPIAxanthic.jpeg" alt="Pastel VPI Axanthic Ball Python">
                     <div class="overlay overlay-bottom overlay-flex-fifth">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Pastel VPI Axanthic<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Pastel VPI Axanthic<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -130,11 +140,13 @@
                     </div>
                 </div>
                 <div class="img-grids">
-                    <img class="img-grid" src="/images/SuperChocolatePinstripe.jpeg"
+                    <img class="img-grid" src="images/SuperChocolatePinstripe.jpeg"
                         alt="Super Chocolate Pinstripe Ball Python">
                     <div class="overlay overlay-bottom overlay-flex-sixth">
-                        <li class="product-link"><a href="https://www.maxserv.com/">Super Chocolate Pinstripe<i
-                                    class="gg-arrow-right-o"></i></a></li>
+                        <ul>
+                            <li class="product-link"><a href="https://www.maxserv.com/">Super Chocolate Pinstripe<i
+                                        class="gg-arrow-right-o"></i></a></li>
+                        </ul>
                     </div>
                     <div class="price-tag">
                         <span class="price-title">PRIJS</span>
@@ -172,7 +184,8 @@
             </div>
             <div class="snelle-section">
                 <h1 class="general-header">Snelle en kwaliteitsvolle producten</h1>
-                <p class="general-text middle-section">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, blanditiis nemo
+                <p class="general-text middle-section">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+                    blanditiis nemo
                     dolorum culpa velit consequatur repudiandae tempora id delectus officia veniam hic. Magni est illum
                     dignissimos tempora nostrum odit amet voluptatum neque odio! Minima amet vero error dicta accusamus
                     impedit, illo quam. In deserunt repellendus quas pariatur nulla. Maxime, unde.</p>
@@ -186,38 +199,44 @@
         <div class="footer">
             <div class="inspiratie-section">
                 <p class="footer-titles">Inspiratie</p>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Medium</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Designerdepot</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Portfolio</a>
-                </li>
+                <ul class="footer_ul">
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Medium</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Designerdepot</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Portfolio</a>
+                    </li>
+                </ul>
             </div>
             <div class="service-section">
                 <p class="footer-titles">Service</p>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Over ons</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Contact</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Servicepunten</a>
+                <ul class="footer_ul">
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Over ons</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Contact</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Servicepunten</a>
+                </ul>
             </div>
             <div class="informatie-section">
                 <p class="footer-titles">Informatie</p>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Github</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Atlassian</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Slack</a>
-                </li>
+                <ul class="footer_ul">
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Github</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Atlassian</a>
+                    </li>
+                    <li class="footer-links">
+                        <a href="https://www.maxserv.com/">Slack</a>
+                    </li>
+                </ul>
             </div>
         </div>
 

@@ -364,6 +364,12 @@ li.footer-links a {
     font-family: 'Open Sans Light';
 }
 
+ul.footer_ul {
+    padding-inline: 0;
+    margin-block: 0;
+}
+
+
 li.footer-links:hover a {
     text-decoration: underline;
     cursor: pointer;
@@ -574,6 +580,10 @@ li.footer-links:hover a {
         gap: 0;
         padding: 0;
     }
+
+    .footer {
+        gap: 25px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -680,9 +690,13 @@ li.footer-links:hover a {
     .footer {
         font-size: small;
         /* flex-direction: column; */
-        gap: 25px;
+        /* gap: 25px; */
         align-items: center;
+    }
 
+    ul.footer_ul {
+        padding-inline: 0;
+        margin-block: 0;
     }
 }
 
