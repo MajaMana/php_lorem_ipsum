@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lorum Ipsum</title>
-    <link rel="icon" type="favicon" href="/images/favicon_lorem.ico">
+    <link rel="icon" type="favicon" href="images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -28,7 +28,7 @@
             <nav class="navbar">
                 <ul class="nav navbar-nav menu">
                     <li class="active nav-links menuItem">
-                        <a href="/index.php">Homepage</a>
+                        <a href="/php_exercises/php_lorem_ipsum/index.php">Homepage</a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Over ons</a>
