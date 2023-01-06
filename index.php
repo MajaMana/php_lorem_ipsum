@@ -8,7 +8,7 @@
     <title>Lorum Ipsum</title>
     <link rel="icon" type="favicon" href="images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <nav class="navbar">
                 <ul class="nav navbar-nav menu">
                     <li class="active nav-links menuItem">
-                        <a href="/php_exercises/php_lorem_ipsum/index.php">Homepage</a>
+                        <a href="/index.php">Homepage</a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Over ons</a>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="logo-container">
-            <img class="logo" src="images/lorem-logo.png"  alt="Lorem Ipsum logo">
+            <img class="logo" src="images/lorem-logo.png" alt="Lorem Ipsum logo">
         </div>
 
         <div class="img-gallery">
