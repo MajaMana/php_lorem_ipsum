@@ -78,31 +78,24 @@
     right: 60px;
 }
 
-.button input {
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    text-align: center;
-    color: lightgray;
-    padding: 6px;
-}
-
-.button:hover input~.checkmark {
+.button:hover {
     background-color: #00b6e8;
     color: white;
 }
 
-.button:hover input:checked~.checkmark {
+.btn-active:hover {
     background-color: white;
     color: lightgray;
 }
 
-.button input:checked~.checkmark {
+.button {
+    display: inline-block;
+    background-color: white;
+    color: lightgray;
+    border: solid white 1px;
+}
+
+.btn-active {
     background-color: #00b6e8;
     color: white;
 }
@@ -383,33 +376,30 @@ li.footer-links:hover a {
     }
 
     .button {
-        top: 12px;
-        font-size: large;
+        top: 8px;
         z-index: 100;
-        height: auto;
-        width: 35px;
+        text-align: center;
     }
 
-    .checkmark {
-        border: solid white 1px;
+    .button:hover {
         background-color: #00b6e8;
         color: white;
     }
 
-    .button:hover input~.checkmark {
+    .btn-active:hover {
         background-color: white;
         color: #00b6e8;
     }
 
-    .button:hover input:checked~.checkmark {
-        background-color: #00b6e8;
-        color: white;
-    }
-
-    .button input:checked~.checkmark {
+    .button {
         background-color: white;
         color: #00b6e8;
         border: solid white 1px;
+    }
+
+    .btn-active {
+        background-color: #00b6e8;
+        color: white;
     }
 
     #btnnl {

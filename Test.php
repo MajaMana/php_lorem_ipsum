@@ -1,3 +1,17 @@
+<?php
+if(isset($_GET['language']))
+    $language = $_GET['language'];
+else
+    $language = "";
+
+if ($language == "en") {
+    include("VariablesEnglish.php");
+} else {
+    include("Variables.php");
+} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,21 +28,15 @@
 <body>
     <div class="page">
         <div class="button-container">
-            <label class="button" id="btnnl">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark">NL</span>
-            </label>
-            <label class="button" id="btnen">
-                <input type="checkbox">
-                <span class="checkmark">EN</span>
-            </label>
+            <button class="button btn-active" id="btnnl">NL</button>
+            <button class="button" id="btnen">EN</button>
         </div>
 
         <div class="navbar-container" id="navbar-container">
             <nav class="navbar">
                 <ul class="nav navbar-nav menu">
                     <li class="active nav-links menuItem">
-                        <a href="/index.php">Homepage</a>
+                        <a href="/Index.php"><?= $aboutUs ?></a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Over ons</a>
@@ -169,7 +177,7 @@
                 laborum. Eligendi aut, rerum commodi eos animi veritatis consequuntur. Voluptates quas quam numquam
                 harum, vel, sint doloremque, in neque dolor laborum dicta ex! Sit atque, consequatur rerum dolore nulla
                 deserunt hic aperiam labore ullam modi nam molestiae cumque qui, doloribus sunt quam, fugiat optio!
-                Officia quis reprehenderit fuga laboriosam vero et libero totam. Libero mollitia vero reprehenderit
+Officia quis reprehenderit fuga laboriosam vero et libero totam. Libero mollitia vero reprehenderit
                 optio voluptas, quia nisi recusandae.</p>
         </div>
 
@@ -180,7 +188,7 @@
                     doloremque saepe facere velit vitae eius commodi illo ad labore. Sed, inventore velit! Facilis saepe
                     quod ratione provident officia iste, libero placeat pariatur earum quisquam, quae cupiditate
                     accusamus laudantium, perspiciatis fugit officiis nihil voluptates vero mollitia perferendis non.
-                    In, veritatis.</p>
+In, veritatis.</p>
             </div>
             <div class="snelle-section">
                 <h1 class="general-header">Snelle en kwaliteitsvolle producten</h1>
@@ -250,6 +258,18 @@
                     menu.classList.remove("showMenu");
                 } else {
                     menu.classList.add("showMenu");
+                }
+            }
+
+            function checkButtons() {
+                const btnnl = document.getElementById("btnnl");
+                const btnen = document.getElementById("btnen");
+
+                if (btnnl.checked = true) {
+                    btnen.checked = false;
+                }
+                else if (btnen.checked = true) {
+                    btnnl.checked = false;
                 }
             }
 
