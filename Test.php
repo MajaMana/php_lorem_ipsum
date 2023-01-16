@@ -1,16 +1,3 @@
-<?php
-if (isset($_GET['language']))
-    $language = $_GET['language'];
-else
-    $language = "";
-
-if ($language == "en") {
-    include("VariablesEnglish.php");
-} else {
-    include("Variables.php");
-} ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,15 +14,15 @@ if ($language == "en") {
 <body>
 <div class="page">
     <div class="button-container">
-        <button class="button btn-active" id="btnnl">NL</button>
-        <button class="button" id="btnen">EN</button>
+            <button class="button btn-active" id="btnnl" value="NL">NL</button>
+            <button class="button" id="btnen" value="EN">EN</button>
     </div>
 
     <div class="navbar-container" id="navbar-container">
         <nav class="navbar">
             <ul class="nav navbar-nav menu">
                 <li class="active nav-links menuItem">
-                    <a href="/Index.php"><?= $aboutUs ?></a>
+                    <a href="/Index.php"></a>
                 </li>
                 <li class="nav-links menuItem">
                     <a href="https://www.maxserv.com/">Over ons</a>
@@ -260,18 +247,6 @@ if ($language == "en") {
             }
         }
 
-        function checkButtons() {
-            const btnnl = document.getElementById("btnnl");
-            const btnen = document.getElementById("btnen");
-
-            if (btnnl.checked = true) {
-                btnen.checked = false;
-            } else if (btnen.checked = true) {
-                btnnl.checked = false;
-            }
-        }
-
-
         const callToActionBtns = document.querySelectorAll(".button");
         callToActionBtns.forEach((button) => {
             button.addEventListener("click", (e) => {
@@ -279,7 +254,6 @@ if ($language == "en") {
                 e.target.classList.toggle("btn-active");
             });
         });
-
 
         hamburger.addEventListener("click", toggleMenu);
 

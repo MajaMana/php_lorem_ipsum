@@ -1,3 +1,15 @@
+<?php
+if(array_key_exists('NL', $_POST)) {
+    include("Variables.php");
+    echo "Nederlandse kmop";
+}
+else if(array_key_exists('EN', $_POST)) {
+    include("VariablesEnglish.php");
+    echo "English button";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,22 +20,21 @@
     <title>Lorum Ipsum</title>
     <link rel="icon" type="favicon" href="images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
-<!--    <link rel="stylesheet" href="/css/style.css">-->
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
     <div class="page">
-        <div class="button-container">
-            <label class="button" id="btnnl">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark">NL</span>
-            </label>
-            <label class="button" id="btnen">
-                <input type="checkbox">
-                <span class="checkmark">EN</span>
-            </label>
-        </div>
+        <form method="post" class="button-container">
+<!--            <label class="button">-->
+                <input type="submit" name="NL" class="button btn-active" id="btnnl" value="NL">
+<!--                <span class="checkmark">NL</span>-->
+<!--            </label>-->
+<!--            <label class="button">-->
+                <input type="submit" name="EN" class="button" id="btnen" value="EN">
+<!--                <span class="checkmark">EN</span>-->
+<!--            </label>-->
+        </form>
 
         <div class="navbar-container" id="navbar-container">
             <nav class="navbar">
@@ -32,7 +43,7 @@
                         <a href="/Index.php">Homepage</a>
                     </li>
                     <li class="nav-links menuItem">
-                        <a href="https://www.maxserv.com/">Over ons</a>
+                        <a href="https://www.maxserv.com/"></a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Producten</a>
@@ -253,6 +264,14 @@
                     menu.classList.add("showMenu");
                 }
             }
+
+            const callToActionBtns = document.querySelectorAll("[type=submit]");
+            callToActionBtns.forEach((input) => {
+                input.addEventListener("click", (e) => {
+                    callToActionBtns.forEach(f => f.classList.remove('btn-active'));
+                    e.target.classList.toggle("btn-active");
+                });
+            });
 
             hamburger.addEventListener("click", toggleMenu);
             function myFunction(x) {
