@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require "Variables.php";
+require "variables/general/Variables.php";
 
 if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "NL"; }
 if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
 
-require "Lang-" . $_SESSION["lang"] . ".php";
+require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 ?>
 
 
@@ -40,18 +40,6 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                         <a href="<?=$link?>"><?=$name?></a>
                     </li>
                 <?php endforeach; ?>
-
-                <!--                -->
-                <!--                <li class="nav-links menuItem">-->
-                <!--                    <a href="https://www.maxserv.com/">--><?php //for($i = 0;$i < count($navItems);$i++)
-                //                            echo $navItems[$i]."\n";?><!--</a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-links menuItem">-->
-                <!--                    <a href="https://www.maxserv.com/">Producten</a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-links menuItem">-->
-                <!--                    <a href="https://www.maxserv.com/">Contact</a>-->
-                <!--                </li>-->
             </ul>
 
             <div class="mobile-nav">
@@ -82,91 +70,22 @@ require "Lang-" . $_SESSION["lang"] . ".php";
 
     <div class="img-gallery">
         <div class="grid-container">
+            <?php foreach($productCards as $productCard => $productcard_value):?>
             <div class="img-grids">
-                <img class="img-grid" src="images/BlackPastel.jpeg" alt="Black Pastel Ball Python">
+                <img class="img-grid" src=<?=$productcard_value->getImage();?> alt=<?=$productcard_value->getName();?>>
                 <div class="overlay">
                     <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Black Pastel<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                        <li class="product-link"><a href=<?=$productcard_value->getLink();?>><?=$productcard_value->getName();?><i
+                                        class=<?=$productcard_value->getIcon();?>></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">625,-</span>
+                    <span class="price-title"><?=$title;?></span>
+                    <span class="price"><?=$productcard_value->getPrice();?>,-</span>
                     <span class="price-triangle"></span>
                 </div>
             </div>
-            <div class="img-grids">
-                <img class="img-grid" src="images/BEL.jpeg" alt="Blue Eyed Leucistic Ball Python">
-                <div class="overlay overlay-flex-second">
-                    <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Blue Eyed Leucistic<i
-                                        class="gg-arrow-right-o"></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">800,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
-            <div class="img-grids">
-                <img class="img-grid" src="images/LightningPied.jpeg" alt="Lightning Pied Ball Python">
-                <div class="overlay overlay-middle overlay-flex-third">
-                    <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Lightning Pied<i
-                                        class="gg-arrow-right-o"></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">950,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
-            <div class="img-grids">
-                <img class="img-grid img-banana" src="images/PastelBanana.jpeg" alt="Pastel Banana Ball Python">
-                <div class="overlay overlay-middle overlay-flex-fourth">
-                    <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Pastel Banana<i
-                                        class="gg-arrow-right-o"></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">425,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
-            <div class="img-grids">
-                <img class="img-grid" src="images/PastelVPIAxanthic.jpeg" alt="Pastel VPI Axanthic Ball Python">
-                <div class="overlay overlay-bottom overlay-flex-fifth">
-                    <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Pastel VPI Axanthic<i
-                                        class="gg-arrow-right-o"></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">775,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
-            <div class="img-grids">
-                <img class="img-grid" src="images/SuperChocolatePinstripe.jpeg"
-                     alt="Super Chocolate Pinstripe Ball Python">
-                <div class="overlay overlay-bottom overlay-flex-sixth">
-                    <ul>
-                        <li class="product-link"><a href="https://www.maxserv.com/">Super Chocolate Pinstripe<i
-                                        class="gg-arrow-right-o"></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title">PRIJS</span>
-                    <span class="price">545,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
 
         <div class="grid-btn">
