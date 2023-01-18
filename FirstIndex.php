@@ -1,12 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "NL"; }
-if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
-
-require "Lang-" . $_SESSION["lang"] . ".php";
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +8,22 @@ require "Lang-" . $_SESSION["lang"] . ".php";
     <title>Lorum Ipsum</title>
     <link rel="icon" type="favicon" href="images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
+    <!--    <link rel="stylesheet" href="/css/style.css">-->
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body lang="<?=$_SESSION["lang"]?>">
+<body>
 <div class="page">
-    <form method="post" class="button-container" id="my-form">
-        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'NL') { echo 'btn-active';} ?>" id="btnnl" value="NL">
-        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'EN') { echo 'btn-active';} ?>" id="btnen" value="EN">
-    </form>
+    <div class="button-container">
+        <label class="button" id="btnnl">
+            <input type="checkbox" checked="checked">
+            <span class="checkmark">NL</span>
+        </label>
+        <label class="button" id="btnen">
+            <input type="checkbox">
+            <span class="checkmark">EN</span>
+        </label>
+    </div>
 
     <div class="navbar-container" id="navbar-container">
         <nav class="navbar">
@@ -34,7 +32,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                     <a href="/Index.php">Homepage</a>
                 </li>
                 <li class="nav-links menuItem">
-                    <a href="https://www.maxserv.com/"><?=$aboutUs?></a>
+                    <a href="https://www.maxserv.com/">Over ons</a>
                 </li>
                 <li class="nav-links menuItem">
                     <a href="https://www.maxserv.com/">Producten</a>
@@ -77,7 +75,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Black Pastel<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
@@ -91,7 +89,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay overlay-flex-second">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Blue Eyed Leucistic<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
@@ -105,7 +103,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay overlay-middle overlay-flex-third">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Lightning Pied<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
@@ -119,7 +117,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay overlay-middle overlay-flex-fourth">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Pastel Banana<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
@@ -133,7 +131,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay overlay-bottom overlay-flex-fifth">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Pastel VPI Axanthic<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
@@ -148,7 +146,7 @@ require "Lang-" . $_SESSION["lang"] . ".php";
                 <div class="overlay overlay-bottom overlay-flex-sixth">
                     <ul>
                         <li class="product-link"><a href="https://www.maxserv.com/">Super Chocolate Pinstripe<i
-                                        class="gg-arrow-right-o"></i></a></li>
+                                    class="gg-arrow-right-o"></i></a></li>
                     </ul>
                 </div>
                 <div class="price-tag">
