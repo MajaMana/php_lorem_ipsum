@@ -1,13 +1,11 @@
 <?php
-if(array_key_exists('NL', $_POST)) {
-    include("Variables.php");
-    echo "Nederlandse kmop";
-}
-else if(array_key_exists('EN', $_POST)) {
-    include("VariablesEnglish.php");
-    echo "English button";
-}
+session_start();
+if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "EN"; }
+if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
+
+require "Lang-" . $_SESSION["lang"] . ".php";
 ?>
+
 
 
 <!DOCTYPE html>
@@ -23,17 +21,11 @@ else if(array_key_exists('EN', $_POST)) {
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body lang="<?=$_SESSION["lang"]?>">
     <div class="page">
-        <form method="post" class="button-container">
-<!--            <label class="button">-->
-                <input type="submit" name="NL" class="button btn-active" id="btnnl" value="NL">
-<!--                <span class="checkmark">NL</span>-->
-<!--            </label>-->
-<!--            <label class="button">-->
-                <input type="submit" name="EN" class="button" id="btnen" value="EN">
-<!--                <span class="checkmark">EN</span>-->
-<!--            </label>-->
+        <form method="post" class="button-container" id="my-form">
+                <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'NL') { echo 'btn-active';} ?>" id="btnnl" value="NL">
+                <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'EN') { echo 'btn-active';} ?>" id="btnen" value="EN">
         </form>
 
         <div class="navbar-container" id="navbar-container">
@@ -43,7 +35,7 @@ else if(array_key_exists('EN', $_POST)) {
                         <a href="/Index.php">Homepage</a>
                     </li>
                     <li class="nav-links menuItem">
-                        <a href="https://www.maxserv.com/"></a>
+                        <a href="https://www.maxserv.com/"><?=$aboutUs?></a>
                     </li>
                     <li class="nav-links menuItem">
                         <a href="https://www.maxserv.com/">Producten</a>
@@ -264,14 +256,6 @@ else if(array_key_exists('EN', $_POST)) {
                     menu.classList.add("showMenu");
                 }
             }
-
-            const callToActionBtns = document.querySelectorAll("[type=submit]");
-            callToActionBtns.forEach((input) => {
-                input.addEventListener("click", (e) => {
-                    callToActionBtns.forEach(f => f.classList.remove('btn-active'));
-                    e.target.classList.toggle("btn-active");
-                });
-            });
 
             hamburger.addEventListener("click", toggleMenu);
             function myFunction(x) {

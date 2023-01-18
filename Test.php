@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "NL"; }
+if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
+
+require "Lang-" . $_SESSION["lang"] . ".php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,24 +17,24 @@
     <title>Lorum Ipsum</title>
     <link rel="icon" type="favicon" href="images/favicon_lorem.ico">
     <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body lang="<?=$_SESSION["lang"]?>">
 <div class="page">
-    <div class="button-container">
-            <button class="button btn-active" id="btnnl" value="NL">NL</button>
-            <button class="button" id="btnen" value="EN">EN</button>
-    </div>
+    <form method="post" class="button-container" id="my-form">
+        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'NL') { echo 'btn-active';} ?>" id="btnnl" value="NL">
+        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'EN') { echo 'btn-active';} ?>" id="btnen" value="EN">
+    </form>
 
     <div class="navbar-container" id="navbar-container">
         <nav class="navbar">
             <ul class="nav navbar-nav menu">
                 <li class="active nav-links menuItem">
-                    <a href="/Index.php"></a>
+                    <a href="/Index.php">Homepage</a>
                 </li>
                 <li class="nav-links menuItem">
-                    <a href="https://www.maxserv.com/">Over ons</a>
+                    <a href="https://www.maxserv.com/"><?=$aboutUs?></a>
                 </li>
                 <li class="nav-links menuItem">
                     <a href="https://www.maxserv.com/">Producten</a>
@@ -247,16 +256,7 @@
             }
         }
 
-        const callToActionBtns = document.querySelectorAll(".button");
-        callToActionBtns.forEach((button) => {
-            button.addEventListener("click", (e) => {
-                callToActionBtns.forEach(f => f.classList.remove('btn-active'));
-                e.target.classList.toggle("btn-active");
-            });
-        });
-
         hamburger.addEventListener("click", toggleMenu);
-
         function myFunction(x) {
             x.classList.toggle("change");
         }

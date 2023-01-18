@@ -385,33 +385,33 @@ li.footer-links:hover a {
     }
 
     .button {
-        top: 12px;
+        top: 7px;
         font-size: large;
         z-index: 100;
         height: auto;
-        width: 35px;
+        width: 40px;
     }
 
-    .checkmark {
+    .button:hover {
+        background-color: #00b6e8;
+        color: white;
+    }
+
+    .button {
+        background-color: white;
+        color: lightgray;
+        border: solid white 1px;
+    }
+
+    .btn-active {
         border: solid white 1px;
         background-color: #00b6e8;
         color: white;
     }
 
-    .button:hover input~.checkmark {
+    .btn-active:hover {
         background-color: white;
-        color: #00b6e8;
-    }
-
-    .button:hover input:checked~.checkmark {
-        background-color: #00b6e8;
-        color: white;
-    }
-
-    .button input:checked~.checkmark {
-        background-color: white;
-        color: #00b6e8;
-        border: solid white 1px;
+        color: lightgray;
     }
 
     #btnnl {
@@ -419,7 +419,7 @@ li.footer-links:hover a {
     }
 
     #btnen {
-        left: 45px;
+        left: 50px;
     }
 
     .text-section-first {
