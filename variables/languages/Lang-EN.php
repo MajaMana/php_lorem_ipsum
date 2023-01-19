@@ -97,6 +97,25 @@ $wowText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cu
                 In, veritatis.";
 //
 
+// quick and high quality products section
+$quickProductsTitle = "Quick and high quality products";
+$quickProductsText = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
+                blanditiis nemo
+                dolorum culpa velit consequatur repudiandae tempora id delectus officia veniam hic. Magni est illum
+                dignissimos tempora nostrum odit amet voluptatum neque odio! Minima amet vero error dicta accusamus
+                impedit, illo quam. In deserunt repellendus quas pariatur nulla. Maxime, unde.";
+//
+
+
+// looking for ideas section
+$ideasTitle = "Looking for ideas for your website?";
+$ideasText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat
+                similique neque dolor doloribus? Nostrum voluptate accusantium reprehenderit? Eum temporibus
+                asperiores provident corporis maxime consectetur vitae ad animi, molestiae sunt.";
+$takeTestLink = "Take the test ";
+$takeTestText = "and discover all options.";
+//
+
 // footer
 $footerArray = array(
     "Inspiration" => array(

@@ -64,10 +64,10 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 
     <div class="text-section-first">
         <div class="text-header">
-            <h1 class="heading heading-first-half"><?=$discoverTitleFirst?></h1>
-            <h1 class="heading heading-second-half"><?=$discoverTitleSecond?></h1>
+            <h1 class="heading heading-first-half"><?= $discoverTitleFirst ?></h1>
+            <h1 class="heading heading-second-half"><?= $discoverTitleSecond ?></h1>
         </div>
-        <p class="text"><?=$discoverText?></p>
+        <p class="text"><?= $discoverText ?></p>
     </div>
 
     <div class="logo-container">
@@ -129,42 +129,41 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
     </div>
 
     <div class="text-section-second">
-        <h1 class="general-header"><?=$moreInformationTitle?></h1>
-        <p class="general-text"><?=$moreInformationText?></p>
+        <h1 class="general-header"><?= $moreInformationTitle ?></h1>
+        <p class="general-text"><?= $moreInformationText ?></p>
     </div>
 
     <div class="three-text-section">
         <div class="wauw-section">
-            <h1 class="general-header"><?=$wowTitle?></h1>
-            <p class="general-text"><?=$wowText?></p>
+            <h1 class="general-header"><?= $wowTitle ?></h1>
+            <p class="general-text"><?= $wowText ?></p>
         </div>
         <div class="snelle-section">
-            <h1 class="general-header">Snelle en kwaliteitsvolle producten</h1>
-            <p class="general-text middle-section">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis,
-                blanditiis nemo
-                dolorum culpa velit consequatur repudiandae tempora id delectus officia veniam hic. Magni est illum
-                dignissimos tempora nostrum odit amet voluptatum neque odio! Minima amet vero error dicta accusamus
-                impedit, illo quam. In deserunt repellendus quas pariatur nulla. Maxime, unde.</p>
-            <h1 class="general-header">Op zoek naar ideeën voor uw website?</h1>
-            <p class="general-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat
-                similique neque dolor doloribus? Nostrum voluptate accusantium reprehenderit? Eum temporibus
-                asperiores provident corporis maxime consectetur vitae ad animi, molestiae sunt.</p>
+            <h1 class="general-header"><?= $quickProductsTitle ?></h1>
+            <p class="general-text middle-section"><?= $quickProductsText ?></p>
+            <h1 class="general-header"><?= $ideasTitle ?></h1>
+            <section class="general-text">
+                <p  class="test-text-begin text-with-link"><?= $ideasText ?></p>
+                <li class="test-link text-with-link">
+                    <a href="<?= $link ?>"><?= $takeTestLink ?></a></li>
+                <p  class="test-text-end text-with-link"><?= $takeTestText ?></p>
+            </section>
         </div>
     </div>
 
     <div class="footer">
-        <?php foreach ($footerArray as $array => $array_value):?>
-        <div class="footer-section">
-            <p class="footer-titles"><?=$array?></p>
-            <ul class="footer_ul">
-                <?php foreach ($array_value as $arrayItem => $arrayItem_value):?>
-                <li class="footer-links">
-                    <a href="<?=$arrayItem_value?>"><?=$arrayItem?></a>
-                </li>
-                <?php endforeach;?>
-            </ul>
-        </div>
-        <?php endforeach;?>
+        <?php foreach ($footerArray as $array => $array_value): ?>
+            <div class="footer-section">
+                <p class="footer-titles"><?= $array ?></p>
+                <ul class="footer_ul">
+                    <?php foreach ($array_value as $arrayItem => $arrayItem_value): ?>
+                        <li class="footer-links">
+                            <a href="<?= $arrayItem_value ?>"><?= $arrayItem ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <script src="js/myscript.js"></script>
