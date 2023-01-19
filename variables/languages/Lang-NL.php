@@ -44,6 +44,16 @@ $productCards[5] = new ProductCard(
     "images/SuperChocolatePinstripe.jpeg",
     545);
 
+$productCards[6] = new ProductCard(
+    "Leopard Desert Ghost",
+    "images/LeopardDesertGhost.jpeg",
+    675);
+
+$productCards[7] = new ProductCard(
+    "Firebee Leopard Axanthic",
+    "images/FirebeeLeopardAxanthic.jpeg",
+    995);
+
 
 
 
