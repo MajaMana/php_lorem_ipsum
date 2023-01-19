@@ -1,13 +1,13 @@
 <?php
 
-namespace model\Item;
+namespace model;
 class ProductCard
 {
-    private String $name;
-    private String $image;
+    private string $name;
+    private string $image;
     private int $price;
-    private String $link;
-    private String $icon;
+    private string $link;
+    private string $icon;
 
     /**
      * @param String $name
@@ -64,7 +64,5 @@ class ProductCard
     {
         return $this->icon;
     }
-
-
 
 }

@@ -3,8 +3,14 @@ session_start();
 
 require "variables/general/Variables.php";
 
-if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "NL"; }
-if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
+// default website language
+if (!isset($_SESSION["lang"])) {
+    $_SESSION["lang"] = "NL";
+}
+// available languages
+if (isset($_POST["lang"])) {
+    $_SESSION["lang"] = $_POST["lang"];
+}
 
 require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 ?>
@@ -23,21 +29,25 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body lang="<?=$_SESSION["lang"]?>">
+<body lang="<?= $_SESSION["lang"] ?>">
 <div class="page">
     <form method="post" class="button-container" id="my-form">
-        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'NL') { echo 'btn-active';} ?>" id="btnnl" value="NL">
-        <input type="submit" name="lang" class="button <?php if($_SESSION["lang"] == 'EN') { echo 'btn-active';} ?>" id="btnen" value="EN">
+        <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'NL') {
+            echo 'btn-active';
+        } ?>" id="btnnl" value="NL">
+        <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'EN') {
+            echo 'btn-active';
+        } ?>" id="btnen" value="EN">
     </form>
 
     <div class="navbar-container" id="navbar-container">
         <nav class="navbar">
             <ul class="nav navbar-nav menu">
-                <?php foreach($navItems as $name => $link): ?>
+                <?php foreach ($navItems as $name => $link): ?>
                     <li class="nav-links menuItem <?php if ($name === "Homepage") {
                         echo "active";
-                    }?>">
-                        <a href="<?=$link?>"><?=$name?></a>
+                    } ?>">
+                        <a href="<?= $link ?>"><?= $name ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -54,65 +64,79 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 
     <div class="text-section-first">
         <div class="text-header">
-            <h1 class="heading heading-first-half">Ontdek al</h1>
-            <h1 class="heading heading-second-half">onze producten</h1>
+            <h1 class="heading heading-first-half"><?=$discoverTitleFirst?></h1>
+            <h1 class="heading heading-second-half"><?=$discoverTitleSecond?></h1>
         </div>
-        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores odit et dignissimos
-            aliquam sed ut praesentium facere sapiente. Excepturi sequi dolores hic doloribus ducimus possimus
-            voluptas labore! Ducimus corrupti omnis quod id iusto quibusdam, officiis voluptatibus deserunt quos
-            deleniti reprehenderit consequuntur sequi laborum delectus provident unde adipisci maxime asperiores
-            esse. </p>
+        <p class="text"><?=$discoverText?></p>
     </div>
 
     <div class="logo-container">
-        <img class="logo" src="<?=$logo?>" alt="Lorem Ipsum logo">
+        <img class="logo" src="<?= $logo ?>" alt="Lorem Ipsum logo">
     </div>
 
     <div class="img-gallery">
         <div class="grid-container">
-            <?php foreach($productCards as $productCard => $productcard_value):?>
-            <div class="img-grids">
-                <img class="img-grid" src=<?=$productcard_value->getImage();?> alt=<?=$productcard_value->getName();?>>
-                <div class="overlay">
-                    <ul>
-                        <li class="product-link"><a href=<?=$productcard_value->getLink();?>><?=$productcard_value->getName();?><i
-                                        class=<?=$productcard_value->getIcon();?>></i></a></li>
-                    </ul>
-                </div>
-                <div class="price-tag">
-                    <span class="price-title"><?=$title;?></span>
-                    <span class="price"><?=$productcard_value->getPrice();?>,-</span>
-                    <span class="price-triangle"></span>
-                </div>
-            </div>
-            <?php endforeach; ?>
+            <?php if (isset($_GET["showMore"])): ?>
+                <?php foreach ($productCards as $productCard => $productcard_value): ?>
+                    <div class="img-grids">
+                        <img class="img-grid"
+                             src=<?= $productcard_value->getImage(); ?> alt=<?= $productcard_value->getName(); ?>>
+                        <div class="overlay">
+                            <ul>
+                                <li class="product-link"><a
+                                            href=<?= $productcard_value->getLink(); ?>><?= $productcard_value->getName(); ?>
+                                        <i
+                                                class=<?= $productcard_value->getIcon(); ?>></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="price-tag">
+                            <span class="price-title"><?= $title; ?></span>
+                            <span class="price"><?= $productcard_value->getPrice(); ?>,-</span>
+                            <span class="price-triangle"></span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+
+            <?php else: ?>
+                <?php foreach ($productCards as $productCard => $productcard_value): ?>
+                    <?php if ($productCard > 5) {
+                        continue;
+                    } ?>
+                    <div class="img-grids">
+                        <img class="img-grid"
+                             src=<?= $productcard_value->getImage(); ?> alt=<?= $productcard_value->getName(); ?>>
+                        <div class="overlay">
+                            <ul>
+                                <li class="product-link"><a
+                                            href=<?= $productcard_value->getLink(); ?>><?= $productcard_value->getName(); ?>
+                                        <i
+                                                class=<?= $productcard_value->getIcon(); ?>></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="price-tag">
+                            <span class="price-title"><?= $title; ?></span>
+                            <span class="price"><?= $productcard_value->getPrice(); ?>,-</span>
+                            <span class="price-triangle"></span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
 
-        <div class="grid-btn">
-            <button class="product-btn">MEER PRODUCTEN TONEN</button>
-        </div>
+        <form method="get" class="grid-btn">
+            <input type="submit" name="showMore" class="product-btn" value="<?= $productButton ?>">
+        </form>
     </div>
 
     <div class="text-section-second">
-        <h1 class="general-header">Meer informatie nodig?</h1>
-        <p class="general-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi. Quod amet
-            aut fuga veritatis vitae labore molestias atque ipsam cupiditate exercitationem doloribus velit dolore
-            dignissimos, impedit voluptate voluptas ut inventore ullam dolores dolorum molestiae odio vero numquam
-            laborum. Eligendi aut, rerum commodi eos animi veritatis consequuntur. Voluptates quas quam numquam
-            harum, vel, sint doloremque, in neque dolor laborum dicta ex! Sit atque, consequatur rerum dolore nulla
-            deserunt hic aperiam labore ullam modi nam molestiae cumque qui, doloribus sunt quam, fugiat optio!
-            Officia quis reprehenderit fuga laboriosam vero et libero totam. Libero mollitia vero reprehenderit
-            optio voluptas, quia nisi recusandae.</p>
+        <h1 class="general-header"><?=$moreInformationTitle?></h1>
+        <p class="general-text"><?=$moreInformationText?></p>
     </div>
 
     <div class="three-text-section">
         <div class="wauw-section">
-            <h1 class="general-header">Het WAUW effect</h1>
-            <p class="general-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate
-                doloremque saepe facere velit vitae eius commodi illo ad labore. Sed, inventore velit! Facilis saepe
-                quod ratione provident officia iste, libero placeat pariatur earum quisquam, quae cupiditate
-                accusamus laudantium, perspiciatis fugit officiis nihil voluptates vero mollitia perferendis non.
-                In, veritatis.</p>
+            <h1 class="general-header"><?=$wowTitle?></h1>
+            <p class="general-text"><?=$wowText?></p>
         </div>
         <div class="snelle-section">
             <h1 class="general-header">Snelle en kwaliteitsvolle producten</h1>
@@ -129,67 +153,21 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
     </div>
 
     <div class="footer">
-        <div class="inspiratie-section">
-            <p class="footer-titles">Inspiratie</p>
+        <?php foreach ($footerArray as $array => $array_value):?>
+        <div class="footer-section">
+            <p class="footer-titles"><?=$array?></p>
             <ul class="footer_ul">
+                <?php foreach ($array_value as $arrayItem => $arrayItem_value):?>
                 <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Medium</a>
+                    <a href="<?=$arrayItem_value?>"><?=$arrayItem?></a>
                 </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Designerdepot</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Portfolio</a>
-                </li>
+                <?php endforeach;?>
             </ul>
         </div>
-        <div class="service-section">
-            <p class="footer-titles">Service</p>
-            <ul class="footer_ul">
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Over ons</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Contact</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Servicepunten</a>
-            </ul>
-        </div>
-        <div class="informatie-section">
-            <p class="footer-titles">Informatie</p>
-            <ul class="footer_ul">
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Github</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Atlassian</a>
-                </li>
-                <li class="footer-links">
-                    <a href="https://www.maxserv.com/">Slack</a>
-                </li>
-            </ul>
-        </div>
+        <?php endforeach;?>
     </div>
 
-    <script>
-        const menu = document.querySelector(".menu");
-        const menuItems = document.querySelectorAll(".menuItem");
-        const hamburger = document.querySelector(".hamburger");
-
-        function toggleMenu() {
-            if (menu.classList.contains("showMenu")) {
-                menu.classList.remove("showMenu");
-            } else {
-                menu.classList.add("showMenu");
-            }
-        }
-
-        hamburger.addEventListener("click", toggleMenu);
-        function myFunction(x) {
-            x.classList.toggle("change");
-        }
-    </script>
+    <script src="js/myscript.js"></script>
 </div>
 </body>
 
