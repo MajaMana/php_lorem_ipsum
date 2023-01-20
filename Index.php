@@ -196,8 +196,17 @@ if (isset($_POST["hideButton"])) {
 
     <section class="copyright-section">
         <p class="copyright copyright-start"><?=$copyright?></p>
-<!--        <p class="copyright copyright-empty"></p>-->
         <p class="copyright copyright-end"><?=$allRightsText?></p>
+    </section>
+
+    <section class="bottom-page-section">
+        <ul class="bottom-page">
+            <?php foreach ($bottomPageLinks as $name => $link): ?>
+                <li class="bottom-page-link">
+                    <a href="<?= $link ?>"><?= $name ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </section>
 
     <script src="js/myscript.js"></script>

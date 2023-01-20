@@ -140,3 +140,11 @@ $footerArray = array(
 // copyright language specific
 $allRightsText = "Alle rechten voorbehouden";
 //
+
+// bottom of the page links
+$bottomPageLinks = [
+    "Voorwaarden"=>$link,
+    "Sitemap"=>$link,
+    "Afmelden"=>$link,
+];
+//

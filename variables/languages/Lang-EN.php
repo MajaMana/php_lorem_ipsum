@@ -142,3 +142,11 @@ $footerArray = array(
 // copyright language specific
 $allRightsText = "All rights reserved";
 //
+
+// bottom of the page links
+$bottomPageLinks = [
+    "Terms and Conditions"=>$link,
+    "Sitemap"=>$link,
+    "Sign out"=>$link,
+];
+//
