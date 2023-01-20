@@ -175,19 +175,30 @@ if (isset($_POST["hideButton"])) {
     </div>
 
     <div class="footer">
-        <?php foreach ($footerArray as $array => $array_value): ?>
-            <div class="footer-section">
-                <p class="footer-titles"><?= $array ?></p>
-                <ul class="footer_ul">
-                    <?php foreach ($array_value as $arrayItem => $arrayItem_value): ?>
-                        <li class="footer-links">
-                            <a href="<?= $arrayItem_value ?>"><?= $arrayItem ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endforeach; ?>
+        <section class="footer-navigation">
+            <?php foreach ($footerArray as $array => $array_value): ?>
+                <div class="footer-section">
+                    <p class="footer-titles"><?= $array ?></p>
+                    <ul class="footer_ul">
+                        <?php foreach ($array_value as $arrayItem => $arrayItem_value): ?>
+                            <li class="footer-links">
+                                <a href="<?= $arrayItem_value ?>"><?= $arrayItem ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+        </section>
+        <section class="footer-logo-container">
+            <img class="footer-logo" src="<?= $logo ?>" alt="Lorem Ipsum logo">
+        </section>
     </div>
+
+    <section class="copyright-section">
+        <p class="copyright copyright-start"><?=$copyright?></p>
+<!--        <p class="copyright copyright-empty"></p>-->
+        <p class="copyright copyright-end"><?=$allRightsText?></p>
+    </section>
 
     <script src="js/myscript.js"></script>
 </div>

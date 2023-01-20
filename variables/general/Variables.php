@@ -11,3 +11,7 @@ $link = "https://www.maxserv.com/";
 $hiddenButton;
 $showingButton;
 //
+
+// copyright current year
+$copyright = "Copyright © " . date("Y");
+//

@@ -136,3 +136,7 @@ $footerArray = array(
         "Slack" => $link
     ));
 //
+
+// copyright language specific
+$allRightsText = "Alle rechten voorbehouden";
+//
