@@ -8,6 +8,11 @@ require "model/ProductCards.php";
 
 use model\ProductCard as ProductCard;
 
+// hide and show button titles
+$hiddenButtonTitle = "Toon";
+$showingButtonTitle = "Verberg";
+//
+
 // navbar
 $navItems = [
     "Homepage"=>"/Index.php",

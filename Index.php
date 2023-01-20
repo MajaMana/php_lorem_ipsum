@@ -7,12 +7,25 @@ require "variables/general/Variables.php";
 if (!isset($_SESSION["lang"])) {
     $_SESSION["lang"] = "NL";
 }
+//
+
 // available languages
 if (isset($_POST["lang"])) {
     $_SESSION["lang"] = $_POST["lang"];
 }
+//
 
 require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
+
+// hide or show language buttons
+if (isset($_POST["hideButton"])) {
+    $hiddenButton = true;
+    $showingButton = false;
+} else {
+    $hiddenButton = false;
+    $showingButton = true;
+}
+//
 ?>
 
 
@@ -31,14 +44,26 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 
 <body lang="<?= $_SESSION["lang"] ?>">
 <div class="page">
-    <form method="post" class="button-container" id="my-form">
-        <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'NL') {
-            echo 'btn-active';
-        } ?>" id="btnnl" value="NL">
-        <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'EN') {
-            echo 'btn-active';
-        } ?>" id="btnen" value="EN">
-    </form>
+    <section class="language-section">
+        <form method="post" class="button-container <?php if ($hiddenButton === true) {
+            echo 'hidden-section';
+        } ?>" id="my-form">
+            <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'NL') {
+                echo 'btn-active';
+            } ?>" id="btnnl" value="NL">
+            <input type="submit" name="lang" class="button <?php if ($_SESSION["lang"] == 'EN') {
+                echo 'btn-active';
+            } ?>" id="btnen" value="EN">
+        </form>
+        <form method="post" class="hide-button-form">
+            <input type="submit" name="hideButton" class="hide-button <?php if ($hiddenButton === true) {
+                echo 'hidden-section';
+            } ?>" value="<?= $showingButtonTitle ?>">
+            <input type="submit" name="showButton" class="hide-button <?php if ($showingButton === true) {
+                echo 'hidden-section';
+            } ?>" value="<?= $hiddenButtonTitle ?>">
+        </form>
+    </section>
 
     <div class="navbar-container" id="navbar-container">
         <nav class="navbar">
@@ -143,7 +168,8 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
             <p class="general-text middle-section"><?= $quickProductsText ?></p>
             <h1 class="general-header"><?= $ideasTitle ?></h1>
             <section class="general-text">
-                <p  class="test-text"><?= $ideasText . ' '?><a href="<?= $link ?>"><?=  $takeTestLink ?></a><?= ' ' . $takeTestText ?></p>
+                <p class="test-text"><?= $ideasText . ' ' ?><a
+                            href="<?= $link ?>"><?= $takeTestLink ?></a><?= ' ' . $takeTestText ?></p>
             </section>
         </div>
     </div>
