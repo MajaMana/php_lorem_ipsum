@@ -108,8 +108,7 @@ $quickProductsText = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
 // looking for ideas section
 $ideasTitle = "Op zoek naar ideeën voor uw website?";
 $ideasText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat
-                similique neque dolor doloribus? Nostrum voluptate accusantium reprehenderit? Eum temporibus
-                asperiores provident corporis maxime consectetur vitae ad animi, molestiae sunt.";
+                similique neque dolor doloribus? Nostrum voluptate accusantium reprehenderit?";
 $takeTestLink = "Doe de test ";
 $takeTestText = "en ontdek alle opties.";
 //

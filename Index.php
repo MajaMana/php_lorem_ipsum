@@ -143,10 +143,7 @@ require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
             <p class="general-text middle-section"><?= $quickProductsText ?></p>
             <h1 class="general-header"><?= $ideasTitle ?></h1>
             <section class="general-text">
-                <p  class="test-text-begin text-with-link"><?= $ideasText ?></p>
-                <li class="test-link text-with-link">
-                    <a href="<?= $link ?>"><?= $takeTestLink ?></a></li>
-                <p  class="test-text-end text-with-link"><?= $takeTestText ?></p>
+                <p  class="test-text"><?= $ideasText . ' '?><a href="<?= $link ?>"><?=  $takeTestLink ?></a><?= ' ' . $takeTestText ?></p>
             </section>
         </div>
     </div>
