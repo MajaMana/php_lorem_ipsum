@@ -7,13 +7,11 @@ require "variables/general/Variables.php";
 if (!isset($_SESSION["lang"])) {
     $_SESSION["lang"] = "NL";
 }
-//
 
 // available languages
 if (isset($_POST["lang"])) {
     $_SESSION["lang"] = $_POST["lang"];
 }
-//
 
 require "variables/languages/Lang-" . $_SESSION["lang"] . ".php";
 
@@ -25,7 +23,6 @@ if (isset($_POST["hideButton"])) {
     $hiddenButton = false;
     $showingButton = true;
 }
-//
 ?>
 
 

@@ -2,7 +2,6 @@
 
 // use $link from general variable file
 require "variables/general/Variables.php";
-//
 
 require "model/ProductCards.php";
 
@@ -11,7 +10,6 @@ use model\ProductCard as ProductCard;
 // hide and show button titles
 $hiddenButtonTitle = "Toon";
 $showingButtonTitle = "Verberg";
-//
 
 // navbar
 $navItems = [
@@ -20,7 +18,6 @@ $navItems = [
     "Producten"=>$link,
     "Contact"=>$link
 ];
-//
 
 // discover all our products section
 $discoverTitleFirst = "Ontdek al";
@@ -74,11 +71,9 @@ $productCards[7] = new ProductCard(
     "Firebee Leopard Axanthic",
     "images/FirebeeLeopardAxanthic.jpeg",
     995);
-//
 
 // show more products button
 $productButton = "MEER PRODUCTEN TONEN";
-//
 
 // need more information section
 $moreInformationTitle = "Meer informatie nodig?";
@@ -90,7 +85,6 @@ $moreInformationText = "Lorem ipsum dolor sit amet consectetur adipisicing elit.
             deserunt hic aperiam labore ullam modi nam molestiae cumque qui, doloribus sunt quam, fugiat optio!
             Officia quis reprehenderit fuga laboriosam vero et libero totam. Libero mollitia vero reprehenderit
             optio voluptas, quia nisi recusandae.";
-//
 
 // the wow effect section
 $wowTitle = "Het WAUW effect";
@@ -99,7 +93,6 @@ $wowText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cu
                 quod ratione provident officia iste, libero placeat pariatur earum quisquam, quae cupiditate
                 accusamus laudantium, perspiciatis fugit officiis nihil voluptates vero mollitia perferendis non.
                 In, veritatis.";
-//
 
 // quick and high quality products section
 $quickProductsTitle = "Snelle en kwaliteitsvolle producten";
@@ -108,7 +101,6 @@ $quickProductsText = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 dolorum culpa velit consequatur repudiandae tempora id delectus officia veniam hic. Magni est illum
                 dignissimos tempora nostrum odit amet voluptatum neque odio! Minima amet vero error dicta accusamus
                 impedit, illo quam. In deserunt repellendus quas pariatur nulla. Maxime, unde.";
-//
 
 // looking for ideas section
 $ideasTitle = "Op zoek naar ideeën voor uw website?";
@@ -116,7 +108,6 @@ $ideasText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Providen
                 similique neque dolor doloribus? Nostrum voluptate accusantium reprehenderit?";
 $takeTestLink = "Doe de test ";
 $takeTestText = "en ontdek alle opties.";
-//
 
 // footer
 $footerArray = array(
@@ -135,11 +126,9 @@ $footerArray = array(
         "Atlassian" => $link,
         "Slack" => $link
     ));
-//
 
 // copyright language specific
 $allRightsText = "Alle rechten voorbehouden";
-//
 
 // bottom of the page links
 $bottomPageLinks = [
@@ -147,4 +136,3 @@ $bottomPageLinks = [
     "Sitemap"=>$link,
     "Afmelden"=>$link,
 ];
-//
